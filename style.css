@@ -1,33 +1,82 @@
-/* កំណត់ Font ខ្មែរជា Default */
+/* =======================================================
+   ១. កំណត់ Font ខ្មែរ និងអង់គ្លេសជាលក្ខណៈសាកល (Global Fonts)
+   ======================================================= */
+body {
+    font-family: 'Kantumruy Pro', 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
 .font-khmer {
     font-family: 'Kantumruy Pro', sans-serif;
 }
 
-/* បន្ថែម Smooth Scrolling ពេលប្តូរទំព័រ */
+/* =======================================================
+   ២. បន្ថែមមុខងាររមៀលអេក្រង់រលូន (Smooth Scrolling)
+   ======================================================= */
 html {
     scroll-behavior: smooth;
 }
 
-/* Effect ពេល Hover លើ Card ថ្នាក់រៀន */
+/* =======================================================
+   ៣. ស្ទីល និងចលនាសម្រាប់កាតកម្មវិធីសិក្សា (Card Interactions)
+   ======================================================= */
 .card {
-    transition: all 0.3s ease-in-out;
-}
-.card:hover {
-    transform: translateY(-5px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Animation ពេលទំព័រដើមដំណើរការ (Hero Section Fade-in) */
+/* ចលនាពេលយកម៉ៅស៍ទៅដាក់ពីលើ (Hover Effect) */
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+/* ថ្នាក់ជំនួយសម្រាប់មុខងារ Highlight ក្នុង script1.js (ពេលចុចសេចក្តីជូនដំណឹង) */
+.card.ring-4 {
+    transition: transform 0.4s ease, ring 0.4s ease;
+}
+
+/* =======================================================
+   ៤. ចលនាបង្ហាញទំព័រដំបូង (Hero Section Fade-in Animation)
+   ======================================================= */
 .section-fade {
-    animation: fadeIn 1s ease-out forwards;
+    animation: fadeIn 1.2s ease-out forwards;
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* =======================================================
+   ៥. ស្ទីលបន្ថែមសម្រាប់ឧបករណ៍ក្នុងបន្ទប់រៀនអនឡាញ (Zoom SDK UI Support)
+   ======================================================= */
+/* សម្រាប់បង្កើតស្រមោល ឬផ្ទៃខ្មៅស្អាតជុំវិញ Canvas បញ្ចាំងវីដេអូ */
+#classroom-canvas {
+    background: #000000;
+    border-radius: 0.75rem;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* កំណត់ស្ទីល Scrollbar ឱ្យមានរាងតូចស្អាតទាន់សម័យ */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
 }
