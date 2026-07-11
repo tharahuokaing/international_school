@@ -1,18 +1,39 @@
-// Sample implementation outline for initializing a Video SDK session
+// នាំចូល (Import) ម៉ូឌុល Zoom Video SDK
 import ZoomVideo from '@zoom/videosdk';
 
+// បង្កើត Client សម្រាប់គ្រប់គ្រងការភ្ជាប់
 const client = ZoomVideo.createClient();
 let mediaStream;
 
+/**
+ * មុខងារសម្រាប់ចាប់ផ្តើម និងចូលរួមថ្នាក់រៀនអនឡាញ
+ * @param {string} topic - ឈ្មោះបន្ទប់រៀន ឬវិញ្ញាសាសិក្សា
+ * @param {string} token - លេខកូដសុវត្ថិភាព JWT Token សម្រាប់ផ្ទៀងផ្ទាត់
+ * @param {string} studentName - ឈ្មោះសិស្ស ឬអ្នកប្រើប្រាស់ដែលត្រូវចូលរួម
+ */
 async function startClassroom(topic, token, studentName) {
-    // 1. Initialize the global client
-    await client.init('en-US', 'Global', { patchJsMedia: true });
-    
-    // 2. Join the dedicated classroom channel
-    await client.join(topic, token, studentName);
-    
-    // 3. Establish the media pipeline for rendering video
-    mediaStream = client.getMediaStream();
-    await mediaStream.startVideo();
-    await mediaStream.startAudio();
+    try {
+        // ១. ចាប់ផ្តើមដំណើរការ Global Client របស់ Zoom
+        await client.init('en-US', 'Global', { patchJsMedia: true });
+        console.log("Zoom Video SDK បានចាប់ផ្តើមដោយជោគជ័យ។");
+
+        // ២. ចូលរួមទៅកាន់បន្ទប់រៀន (Classroom Channel) ដែលបានកំណត់
+        await client.join(topic, token, studentName);
+        console.log(`បានចូលរួមថ្នាក់រៀន: ${topic} ក្នុងនាមជា: ${studentName}`);
+
+        // ៣. បង្កើតប្រព័ន្ធផ្សាយ (Media Pipeline) សម្រាប់សំឡេង និងវីដេអូ
+        mediaStream = client.getMediaStream();
+
+        // ៤. បើកដំណើរការកាមេរ៉ា និងមីក្រូហ្វូន
+        await mediaStream.startVideo();
+        await mediaStream.startAudio();
+        console.log("កាមេរ៉ា និងមីក្រូហ្វូនត្រូវបានបើកដំណើរការជោគជ័យ។");
+
+    } catch (error) {
+        // បង្ហាញសារព្រមានក្នុងករណីមានកំហុសបច្ចេកទេស
+        console.error("ការភ្ជាប់ទៅកាន់ថ្នាក់រៀនមានបញ្ហា:", error);
+    }
 }
+
+// នាំចេញមុខងារដើម្បីយកទៅប្រើប្រាស់ក្នុងឯកសារផ្សេងទៀត (ឧទាហរណ៍៖ ចុចប៊ូតុងដើម្បីចូលរៀន)
+export { startClassroom };
