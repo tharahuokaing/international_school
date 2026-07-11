@@ -1,8 +1,3 @@
-នេះជាខ្លឹមសារសម្រាប់ឯកសារ `README.md` ពេញលេញ ដែលរៀបរាប់ពីគម្រោងគេហទំព័ររបស់ **HUOKAING THARA INTERNATIONAL School** រួមទាំងការបញ្ជាក់ពីមុខងារនៃរាល់ឯកសារ JavaScript (`script1.js` ដល់ `script10.js`) ដែលបានបង្កើត ដើម្បីងាយស្រួលយល់ពីទម្រង់ការងារ៖
-
-### `README.md`
-
-```markdown
 # HUOKAING THARA INTERNATIONAL School - E-Learning Platform
 
 គេហទំព័រផ្លូវការសម្រាប់កម្មវិធីសិក្សាតាមប្រព័ន្ធអនឡាញ ចាប់ពីថ្នាក់ទី១ ដល់ថ្នាក់ទី៦ របស់សាលាអន្តរជាតិ ហួរកៃ ថារ៉ា (HUOKAING THARA INTERNATIONAL School) ដោយអនុលោមតាមស្តង់ដារបច្ចេកទេស និងការណែនាំរបស់ក្រសួងអប់រំ យុវជន និងកីឡា។
@@ -43,7 +38,3 @@ cd international_school
 ## 📝 អាជ្ញាប័ណ្ណ (License)
 
 គម្រោងនេះស្ថិតក្រោមអាជ្ញាប័ណ្ណ **MIT License**។
-
-```
-
-```
