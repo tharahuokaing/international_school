@@ -80,3 +80,48 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background: #94a3b8;
 }
+
+/* ==========================================================================
+   HUOKAING THARA INTERNATIONAL SCHOOL - GRADE 1 INTERACTIVE STYLES
+   ========================================================================== */
+
+/* 1. Alphabet Board Card Styling (script13.js) */
+.letter-card {
+  @apply cursor-pointer select-none border-2 border-gray-200 rounded-2xl p-4 
+         text-center text-3xl font-bold bg-white shadow-sm 
+         transition-all duration-200 transform active:scale-95 hover:shadow-md;
+}
+
+/* 2. Math Drag and Drop Zone Custom Transitions (script14.js) */
+.math-drop-zone {
+  min-width: 60px;
+  min-height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.math-drag-item {
+  @apply cursor-grab active:cursor-grabbing select-none bg-blue-500 text-white 
+         px-4 py-2 rounded-lg font-bold shadow hover:bg-blue-600 
+         transition-transform transform active:scale-95;
+}
+
+/* 3. Error Shake Animation for incorrect math drops */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+  @apply border-red-500 text-red-600;
+}
+
+/* 4. Reward System Floating Widget Backdrop Blur (script12.js) */
+#grade1-rewards {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
