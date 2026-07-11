@@ -3,126 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HUOKAING THARA INTERNATIONAL School</title>
-    <!-- Tailwind CSS CDN -->
+    <title>HUOKAING THARA INTERNATIONAL SCHOOL</title>
+    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for Khmer Language -->
-    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Custom Styles / Fonts Configuration -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap');
+        
+        body {
+            font-family: 'Kantumruy Pro', 'Poppins', sans-serif;
+            background-color: #f8fafc;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-khmer">
+<body class="text-gray-800 antialiased">
 
-    <!-- Header Section -->
-    <header class="bg-blue-900 text-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-            <div class="text-center md:text-left mb-4 md:mb-0">
-                <h1 class="text-2xl font-bold tracking-wide">HUOKAING THARA INTERNATIONAL SCHOOL</h1>
-                <p class="text-sm text-blue-200 mt-1">កម្មវិធីសិក្សាតាមប្រព័ន្ធអនឡាញ (ថ្នាក់ទី១ ដល់ ថ្នាក់ទី៦)</p>
+    <!-- ១. ផ្នែកក្បាលទំព័រ និងរបាររុករក (Header & Navigation) -->
+    <header class="sticky top-0 z-40 bg-blue-950 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h1 class="text-xl md:text-2xl font-bold tracking-wide text-amber-400">HUOKAING THARA INTERNATIONAL SCHOOL</h1>
+                <p class="text-xs text-gray-300 mt-1">កម្មវិធីសិក្សាតាមប្រព័ន្ធអនឡាញ (ថ្នាក់ទី១ ដល់ ថ្នាក់ទី៦)</p>
             </div>
-            <nav class="flex space-x-6 text-sm font-medium">
-                <a href="#home" class="nav-link hover:text-amber-400 transition">ទំព័រដើម</a>
-                <a href="#curriculum" class="nav-link hover:text-amber-400 transition">កម្មវិធីសិក្សា</a>
-                <a href="#announcement" class="nav-link hover:text-amber-400 transition">សេចក្តីជូនដំណឹង</a>
+            <nav class="flex items-center gap-6 text-sm font-medium">
+                <a href="#home" class="hover:text-amber-400 transition">ទំព័រដើម</a>
+                <a href="#curriculum" class="hover:text-amber-400 transition">កម្មវិធីសិក្សា</a>
+                <a href="#announcement" class="hover:text-amber-400 transition">សេចក្តីជូនដំណឹង</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="bg-gradient-to-r from-blue-800 to-indigo-900 text-white py-16 px-4 text-center section-fade">
-        <div class="max-w-3xl mx-auto">
-            <span class="bg-amber-500 text-blue-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">E-Learning Platform</span>
-            <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-6 leading-tight">ការអប់រំតាមឌីជីថលលំដាប់អន្តរជាតិ ប្រកបដោយគុណភាព និងគុណធម៌</h2>
-            <p class="text-blue-100 text-base mb-8">ពង្រឹងសមត្ថភាពបុត្រធីតាលោកអ្នកពីចម្ងាយ ជាមួយប្រព័ន្ធគ្រប់គ្រងការសិក្សាបែបទំនើប ស្របតាមស្តង់ដារក្រសួងអប់រំ យុវជន និងកីឡា។</p>
-            <button id="exploreBtn" class="bg-amber-500 hover:bg-amber-600 text-blue-950 font-semibold px-6 py-3 rounded-lg shadow-md transition transform hover:scale-105">
-                ស្វែងយល់ពីថ្នាក់រៀន
+    <!-- ២. ផ្ទាំងស្វាគមន៍ធំ (Hero Section) -->
+    <section id="home" class="relative bg-gradient-to-r from-blue-900 to-blue-950 text-white py-16 md:py-24 px-4 overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="bg-amber-500/20 text-amber-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">E-Learning Platform</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold mt-4 mb-6 leading-tight">អប់រំប្រកបដោយគុណភាព វិន័យ និងគុណធម៌</h2>
+            <p class="text-base md:text-lg text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
+                ស្វាគមន៍មកកាន់ប្រព័ន្ធសិក្សាបែបឌីជីថលឈានមុខគេ។ យើងផ្តល់ជូននូវបរិយាកាសសិក្សាតាមអនឡាញដ៏សំបូរបែប ងាយស្រួល និងមានប្រសិទ្ធភាពខ្ពស់សម្រាប់កូនៗរបស់លោកអ្នក។
+            </p>
+            <button id="exploreBtn" class="bg-amber-500 hover:bg-amber-400 text-blue-950 font-bold px-8 py-3 rounded-full shadow-lg transition transform hover:scale-105">
+                ស្វែងយល់ពីថ្នាក់រៀន ↓
             </button>
         </div>
+        <!-- Background Elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-blue-800/20 rounded-full blur-3xl -mr-20 -mt-20"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl -ml-20 -mb-20"></div>
     </section>
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-12 max-w-6xl">
+    <!-- ៣. មាតិកាចម្បង (Main Content Body) -->
+    <main class="max-w-5xl mx-auto px-4 py-12">
 
-        <!-- Curriculum Section -->
+        <!-- [DYNAMIC INJECTION PLACEHOLDERS] -->
+        <!-- script3.js នឹងបញ្ចូលព័ត៌មាននាយិកាសាលានៅទីនេះដោយស្វ័យប្រវត្តិ -->
+        <!-- script4.js នឹងបញ្ចូលព័ត៌មានទំនាក់ទំនងនៅទីនេះដោយស្វ័យប្រវត្តិ -->
+
+        <!-- ៤. ផ្នែកកម្មវិធីសិក្សា (Curriculum Section) -->
         <section id="curriculum" class="mb-16">
-            <div class="text-center mb-10">
-                <h3 class="text-2xl font-bold text-blue-900">កម្រិតថ្នាក់សិក្សាតាមអនឡាញ</h3>
-                <div class="h-1 w-20 bg-amber-500 mx-auto mt-2"></div>
-            </div>
-
+            <h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center">
+                <span class="w-2 h-7 bg-blue-900 rounded-full mr-3"></span>
+                កម្មវិធីសិក្សាកម្រិតបឋមសិក្សា
+            </h3>
+            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold text-lg mb-4">១-២</div>
-                    <h4 class="text-lg font-bold mb-2 text-gray-900">កម្រិតដំបូង (ថ្នាក់ទី១ - ទី២)</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed">ផ្តោតលើមូលដ្ឋានគ្រឹះភាសា គណិតវិទ្យាដំបូង និងការស្វែងយល់ពីបរិស្ថានជុំវិញខ្លួន តាមរយៈការបង្រៀនបែបបង្កើតអន្តរកម្ម។</p>
+                <!-- កាតថ្នាក់ទី១-២ -->
+                <div class="card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 transition duration-300 hover:shadow-md">
+                    <div class="text-3xl mb-4">🎒</div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">ថ្នាក់ទី១ និង ទី២</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">ពង្រឹងមូលដ្ឋានគ្រឹះអក្សរសាស្ត្រខ្មែរ គណិតវិទ្យាដំបូង និងជំនាញទំនាក់ទំនងជាមូលដ្ឋាន។</p>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold text-lg mb-4">៣-៤</div>
-                    <h4 class="text-lg font-bold mb-2 text-gray-900">កម្រិតកណ្តាល (ថ្នាក់ទី៣ - ទី៤)</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed">ពង្រឹងការគិតបែបស៊ីជម្រៅ ភាសាបរទេស និងវិទ្យាសាស្ត្រសង្គម រួមជាមួយការប្រើប្រាស់ឧបករណ៍ឌីជីថលជាជំនួយ។</p>
+                <!-- កាតថ្នាក់ទី៣-៤ -->
+                <div class="card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 transition duration-300 hover:shadow-md">
+                    <div class="text-3xl mb-4">📘</div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">ថ្នាក់ទី៣ និង ទី៤</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">អភិវឌ្ឍការគិតពិចារណា ការសិក្សាភាសាបរទេសកម្រិតដំបូង និងវិទ្យាសាស្ត្រសង្គមផ្សេងៗ។</p>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="card bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold text-lg mb-4">៥-៦</div>
-                    <h4 class="text-lg font-bold mb-2 text-gray-900">កម្រិតខ្ពស់ (ថ្នាក់ទី៥ - ទី៦)</h4>
-                    <p class="text-sm text-gray-600 leading-relaxed">ត្រៀមលក្ខណៈសម្រាប់ការឈានចូលអនុវិទ្យាល័យ ផ្តោតលើការដោះស្រាយបញ្ហា និងគម្រោងសិក្សាស្រាវជ្រាវខ្នាតតូចតាមអនឡាញ។</p>
+                <!-- កាតថ្នាក់ទី៥-៦ -->
+                <div class="card bg-white rounded-2xl p-6 shadow-sm border border-gray-100 transition duration-300 hover:shadow-md">
+                    <div class="text-3xl mb-4">🎓</div>
+                    <h4 class="text-lg font-bold text-gray-900 mb-2">ថ្នាក់ទី៥ និង ទី៦</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">ត្រៀមលក្ខណៈសម្រាប់ការផ្លាស់ប្តូរទៅកាន់មធ្យមសិក្សា ជាមួយមេរៀនស៊ីជម្រៅ និងបច្ចេកវិទ្យា។</p>
                 </div>
             </div>
         </section>
 
-        <!-- Information Section -->
-        <section id="announcement" class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100">
-            <h3 class="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                <span class="w-2 h-6 bg-blue-600 rounded-full mr-3"></span>
+        <!-- ៥. ផ្នែកសេចក្តីជូនដំណឹង (Announcement Section) -->
+        <section id="announcement" class="bg-amber-50/60 rounded-2xl p-6 md:p-8 border border-amber-100 mb-16">
+            <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                <span class="w-2 h-7 bg-amber-500 rounded-full mr-3"></span>
                 បច្ចុប្បន្នភាពព័ត៌មានអប់រំ និងសេចក្តីជូនដំណឹង
             </h3>
+            <p class="text-sm text-gray-700 leading-relaxed mb-4">
+                រាល់កម្មវិធីសិក្សាតាមអនឡាញទាំងអស់របស់សាលាអន្តរជាតិ ហួរកៃ ថារ៉ា ត្រូវបានរៀបចំឡើងយ៉ាងហ្មត់ចត់ ដើម្បីធានាបាននូវគុណភាពសិក្សាខ្ពស់ស្របតាមការណែនាំរបស់ក្រសួង។
+            </p>
+            <span class="inline-block bg-amber-500 text-blue-950 text-xs font-bold px-3 py-1 rounded">MOEYS OFFICIAL COMPLIANT</span>
+        </section>
 
-            <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg mb-8">
-                <p class="text-sm text-amber-900 leading-relaxed">
-                    <strong>ចំណាំសម្រាប់ការសិក្សា៖</strong> រាល់កម្មវិធីសិក្សាតាមអនឡាញពីថ្នាក់ទី១ ដល់ថ្នាក់ទី៦ របស់សាលាអន្តរជាតិ ហួកាំង ថារ៉ា ត្រូវបានរៀបចំឡើងយ៉ាងហ្មត់ចត់ ដើម្បីធានាបាននូវគុណភាពសិក្សាខ្ពស់។
-                </p>
-            </div>
-
-            <div class="space-y-6">
-                <div class="border-b border-gray-100 pb-4">
-                    <span class="text-xs font-bold text-blue-600 uppercase tracking-wider block mb-1">MoEYS Official Event</span>
-                    <h4 class="text-base font-bold text-gray-900 mb-2">ការប្រឡងសញ្ញាបត្រមធ្យមសិក្សាទុតិយភូមិ (បាក់ឌុប) ឆ្នាំសិក្សា ២០២៥-២០២៦</h4>
-                    <p class="text-sm text-gray-600">សម័យប្រឡងផ្លូវការនឹងប្រព្រឹត្តទៅនៅ <strong>ថ្ងៃទី ១០ សីហា ២០២៦</strong>។</p>
-                </div>
-
-                <div>
-                    <span class="text-xs font-bold text-green-600 uppercase tracking-wider block mb-1">Digital Education Development</span>
-                    <h4 class="text-base font-bold text-gray-900 mb-2">ការលើកកម្ពស់ការបង្រៀនតាមប្រព័ន្ធឌីជីថល</h4>
-                    <p class="text-sm text-gray-600">ក្រសួងបន្តជម្រុញការបើកវគ្គបណ្តុះបណ្តាលបច្ចេកទេសដើម្បីគាំទ្រដល់សាលារៀនដែលដំណើរការតាមអនឡាញឱ្យមានប្រសិទ្ធភាពខ្ពស់។</p>
-                </div>
+        <!-- ៦. ផ្ទាំងសាកល្បងប្រព័ន្ធថ្នាក់រៀនអនឡាញ (Zoom SDK Classroom Elements Interface) -->
+        <section id="online-classroom" class="bg-gray-900 text-white rounded-2xl p-6 md:p-8 shadow-xl mb-16 hidden">
+            <h3 class="text-xl font-bold text-amber-400 mb-4">📺 ប្រព័ន្ធបន្ទប់រៀនអនឡាញ (Virtual Classroom Preview)</h3>
+            <!-- Canvas សម្រាប់បង្ហាញវីដេអូ ឬ Screen Share (ប្រើក្នុង script7.js & script10.js) -->
+            <div class="relative w-full aspect-video bg-black rounded-xl overflow-hidden border border-gray-800 flex items-center justify-center">
+                <canvas id="classroom-canvas" class="absolute inset-0 w-full h-full object-cover"></canvas>
+                <p id="canvas-placeholder" class="text-gray-500 text-sm z-10">មិនទាន់មានការផ្សាយវីដេអូ...</p>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8 mt-12 text-center text-xs">
-        <div class="container mx-auto px-4">
+    <!-- ៧. ផ្នែកជើងទំព័រ (Footer) -->
+    <footer class="bg-blue-950 text-gray-400 py-8 border-t border-blue-900">
+        <div class="max-w-5xl mx-auto px-4 text-center text-xs">
             <p class="mb-2">&copy; 2026 HUOKAING THARA INTERNATIONAL SCHOOL. All Rights Reserved.</p>
-            <p>សហការ និងអនុលោមតាមគោលការណ៍ណែនាំបច្ចេកទេសរបស់ ក្រសួងអប់រំ យុវជន និងកីឡា</p>
+            <p>Designed for excellence in digital and remote primary education.</p>
         </div>
     </footer>
 
-    <!-- Custom JS -->
+    <!-- ======================================================= -->
+    <!-- ៨. ផ្នែកភ្ជាប់ឯកសារ JAVASCRIPT (Scripts Inclusion) -->
+    <!-- ======================================================= -->
+    
+    <!-- ស្គ្រីបមូលដ្ឋាន និងអន្តរកម្មលើទំព័រ (Vanilla UI Scripts) -->
     <script src="script.js"></script>
     <script src="script1.js"></script>
     <script src="script2.js"></script>
-    <script src="script3.js"></script> 
+    <script src="script3.js"></script>
     <script src="script4.js"></script>
+    
+    <!-- ស្គ្រីបម៉ូឌុលសម្រាប់ថ្នាក់រៀនអនឡាញ (Zoom SDK Infrastructure Modules) -->
+    <!-- ចំណាំ៖ ប្រភេទ "module" គឺចាំបាច់សម្រាប់ការប្រើប្រាស់ import/export statements -->
     <script type="module" src="script5.js"></script>
     <script type="module" src="script6.js"></script>
     <script type="module" src="script7.js"></script>
     <script type="module" src="script8.js"></script>
     <script type="module" src="script9.js"></script>
     <script type="module" src="script10.js"></script>
+
 </body>
 </html>
