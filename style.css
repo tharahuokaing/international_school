@@ -1,0 +1,33 @@
+/* កំណត់ Font ខ្មែរជា Default */
+.font-khmer {
+    font-family: 'Kantumruy Pro', sans-serif;
+}
+
+/* បន្ថែម Smooth Scrolling ពេលប្តូរទំព័រ */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Effect ពេល Hover លើ Card ថ្នាក់រៀន */
+.card {
+    transition: all 0.3s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Animation ពេលទំព័រដើមដំណើរការ (Hero Section Fade-in) */
+.section-fade {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
