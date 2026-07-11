@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 </div>
                 <div>
                     <p class="text-xs text-gray-500 font-medium uppercase">ហ្វេសប៊ុក / Facebook</p>
-                    <a href="https://web.facebook.com/profile.php?id=61591794423722" target="_blank" rel="noopener noreferrer" class="text-base font-bold text-gray-900 hover:text-blue-600 transition">ហួ កាំង - Hua Kaing</a>
+                    <a href="https://web.facebook.com/profile.php?id=61591794423722" target="_blank" rel="noopener noreferrer" class="text-base font-bold text-gray-900 hover:text-blue-600 transition">ហួកាំង ថារ៉ា (HUOKAING THARA INTERNATIONAL SCHOOL)</a>
                 </div>
             </div>
         </div>
