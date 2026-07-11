@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ព័ត៌មានទំនាក់ទំនង (Contact Information)
         </h3>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <!-- លេខទូរស័ព្ទ -->
             <div class="flex items-center p-4 bg-gray-50 rounded-xl border border-gray-100">
                 <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center text-xl mr-4 shadow-sm">
@@ -32,6 +32,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 <div>
                     <p class="text-xs text-gray-500 font-medium uppercase">អ៊ីមែល / Email</p>
                     <a href="mailto:tharahuokaing@gmail.com" class="text-base font-bold text-gray-900 hover:text-blue-600 transition">tharahuokaing@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- ហ្វេសប៊ុក (Facebook Page) -->
+            <div class="flex items-center p-4 bg-gray-50 rounded-xl border border-gray-100">
+                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center text-xl mr-4 shadow-sm">
+                    🌐
+                </div>
+                <div>
+                    <p class="text-xs text-gray-500 font-medium uppercase">ហ្វេសប៊ុក / Facebook</p>
+                    <a href="https://web.facebook.com/profile.php?id=61591794423722" target="_blank" rel="noopener noreferrer" class="text-base font-bold text-gray-900 hover:text-blue-600 transition">ហួ កាំង - Hua Kaing</a>
                 </div>
             </div>
         </div>
