@@ -1,39 +1,45 @@
-// នាំចូល (Import) ម៉ូឌុល Zoom Video SDK
+// នាំចូល (Import) មុខងារ និង Client ពី Zoom Video SDK 
 import ZoomVideo from '@zoom/videosdk';
 
-// បង្កើត Client សម្រាប់គ្រប់គ្រងការភ្ជាប់
 const client = ZoomVideo.createClient();
-let mediaStream;
 
 /**
- * មុខងារសម្រាប់ចាប់ផ្តើម និងចូលរួមថ្នាក់រៀនអនឡាញ
- * @param {string} topic - ឈ្មោះបន្ទប់រៀន ឬវិញ្ញាសាសិក្សា
- * @param {string} token - លេខកូដសុវត្ថិភាព JWT Token សម្រាប់ផ្ទៀងផ្ទាត់
- * @param {string} studentName - ឈ្មោះសិស្ស ឬអ្នកប្រើប្រាស់ដែលត្រូវចូលរួម
+ * មុខងារសម្រាប់ចាកចេញពីថ្នាក់រៀនអនឡាញ និងបិទឧបករណ៍ផ្សាយ
  */
-async function startClassroom(topic, token, studentName) {
+async function leaveClassroom() {
     try {
-        // ១. ចាប់ផ្តើមដំណើរការ Global Client របស់ Zoom
-        await client.init('en-US', 'Global', { patchJsMedia: true });
-        console.log("Zoom Video SDK បានចាប់ផ្តើមដោយជោគជ័យ។");
-
-        // ២. ចូលរួមទៅកាន់បន្ទប់រៀន (Classroom Channel) ដែលបានកំណត់
-        await client.join(topic, token, studentName);
-        console.log(`បានចូលរួមថ្នាក់រៀន: ${topic} ក្នុងនាមជា: ${studentName}`);
-
-        // ៣. បង្កើតប្រព័ន្ធផ្សាយ (Media Pipeline) សម្រាប់សំឡេង និងវីដេអូ
-        mediaStream = client.getMediaStream();
-
-        // ៤. បើកដំណើរការកាមេរ៉ា និងមីក្រូហ្វូន
-        await mediaStream.startVideo();
-        await mediaStream.startAudio();
-        console.log("កាមេរ៉ា និងមីក្រូហ្វូនត្រូវបានបើកដំណើរការជោគជ័យ។");
-
+        // ចាកចេញពី Session បច្ចុប្បន្ន
+        await client.leave();
+        console.log("បានចាកចេញពីថ្នាក់រៀនដោយជោគជ័យ។");
     } catch (error) {
-        // បង្ហាញសារព្រមានក្នុងករណីមានកំហុសបច្ចេកទេស
-        console.error("ការភ្ជាប់ទៅកាន់ថ្នាក់រៀនមានបញ្ហា:", error);
+        console.error("មានបញ្ហាក្នុងការចាកចេញពីថ្នាក់រៀន:", error);
     }
 }
 
-// នាំចេញមុខងារដើម្បីយកទៅប្រើប្រាស់ក្នុងឯកសារផ្សេងទៀត (ឧទាហរណ៍៖ ចុចប៊ូតុងដើម្បីចូលរៀន)
-export { startClassroom };
+/**
+ * មុខងារសម្រាប់ស្តាប់ និងចាប់យកព្រឹត្តិការណ៍ផ្សេងៗនៅក្នុងថ្នាក់រៀន (Event Listeners)
+ * ដូចជា៖ មានសិស្សថ្មីចូលរួម, សិស្សចាកចេញ, ឬការបើក/បិទមីក្រូហ្វូន
+ */
+function setupClassroomEventListeners() {
+    // ១. ចាប់ព្រឹត្តិការណ៍នៅពេលមានអ្នកចូលរួមថ្មី (User Joined)
+    client.on('user-added', (payload) => {
+        payload.forEach(user => {
+            console.log(`👤 សិស្ស/គ្រូ ថ្មីបានចូលរួម៖ ${user.displayName}`);
+        });
+    });
+
+    // ២. ចាប់ព្រឹត្តិការណ៍នៅពេលមានអ្នកចាកចេញ (User Left)
+    client.on('user-removed', (payload) => {
+        payload.forEach(user => {
+            console.log(`🚶 សិស្ស/គ្រូ បានចាកចេញ៖ ${user.displayName}`);
+        });
+    });
+
+    // ៣. ចាប់ព្រឹត្តិការណ៍នៅពេលមានការប្រែប្រួលស្ថានភាពវីដេអូ (Video Status Change)
+    client.on('peer-video-state-change', (payload) => {
+        console.log(`📹 ការផ្លាស់ប្តូរស្ថានភាពវីដេអូពីសមាជិក៖`, payload);
+    });
+}
+
+// នាំចេញមុខងារដើម្បីយកទៅប្រើប្រាស់រួមគ្នាជាមួយ script5.js
+export { leaveClassroom, setupClassroomEventListeners };
