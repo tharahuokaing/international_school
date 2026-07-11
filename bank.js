@@ -19,7 +19,7 @@ function addBankNavigationLink() {
     
     // 4. Create the bank image/icon element
     const bankImg = document.createElement('img');
-    bankImg.src = 'bank_logo.jpg'; // ⚠️ Replace with your actual bank icon/logo image path
+    bankImg.src = 'bank.jpg'; // ⚠️ Replace with your actual bank icon/logo image path
     bankImg.alt = 'Bank Icon';
     bankImg.className = 'w-5 h-5 mr-1 object-contain'; // Sets size and right margin
 
