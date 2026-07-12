@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="school_logo.jpg">
 </head>
-<body class="text-gray-800 antialiased">
+<body class="text-gray-800 antialiased bg-gray-50">
     
     <!-- ១. ផ្នែកក្បាលទំព័រ និងរបាររុករក (Header & Navigation) -->
     <header class="sticky top-0 z-40 bg-blue-950 text-white shadow-md">
@@ -59,14 +59,34 @@
     </section>
 
     <!-- ៣. មាតិកាចម្បង (Main Content Body) -->
-    <main class="max-w-5xl mx-auto px-4 py-12">
+    <main class="max-w-5xl mx-auto px-4 py-12 space-y-16">
+        
+        <!-- === ១. ផ្នែកកម្មវិធីសិក្សាភាសាខ្មែរ (Khmer Section) === -->
+        <section id="curriculum-khmer" class="scroll-mt-24">
+            <h3 class="section-title text-2xl font-bold text-gray-900 mb-6">កម្មវិធីសិក្សាភាសាខ្មែរ</h3>
+            <!-- The JavaScript will dynamically inject the Grade 1-6 cards here -->
+            <div class="grid"></div>
+        </section>
+
+        <hr class="border-gray-200">
+
+        <!-- === ២. ផ្នែកកម្មវិធីសិក្សាគណិតវិទ្យា (Math Section) === -->
+        <section id="curriculum" class="scroll-mt-24">
+            <h3 class="section-title text-2xl font-bold text-gray-900 mb-6">កម្មវិធីសិក្សាកម្រិតបឋមសិក្សាគណិតវិទ្យា</h3>
+            <!-- 
+              The JS will insert the pre-curriculum section right after the h3 tag above,
+              and then inject the Grade 1-6 math cards into the grid div below.
+            -->
+            <div class="grid"></div>
+        </section>
+
+        <hr class="border-gray-200">
 
         <!-- [DYNAMIC INJECTION PLACEHOLDERS] -->
-        <!-- script3.js នឹងបញ្ចូលព័ត៌មាននាយិកាសាលានៅទីនេះដោយស្វ័យប្រវត្តិ -->
-        <!-- script4.js នឹងបញ្ចូលព័ត៌មានទំនាក់ទំនងនៅទីនេះដោយស្វ័យប្រវត្តិ -->
-        
+        <!-- contact.js and bank.js scripts will append/inject info here dynamically -->
+
         <!-- ៤. ផ្នែកសេចក្តីជូនដំណឹង (Announcement Section) -->
-        <section id="announcement" class="bg-amber-50/60 rounded-2xl p-6 md:p-8 border border-amber-100 mb-16">
+        <section id="announcement" class="bg-amber-50/60 rounded-2xl p-6 md:p-8 border border-amber-100 scroll-mt-24">
             <h3 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
                 <span class="w-2 h-7 bg-amber-500 rounded-full mr-3"></span>
                 បច្ចុប្បន្នភាពព័ត៌មានអប់រំ និងសេចក្តីជូនដំណឹង
@@ -76,6 +96,7 @@
             </p>
             <span class="inline-block bg-amber-500 text-blue-950 text-xs font-bold px-3 py-1 rounded">MOEYS OFFICIAL COMPLIANT</span>
         </section>
+    </main>
 
     <!-- ៥. ផ្នែកជើងទំព័រ (Footer) -->
     <footer class="bg-blue-950 text-gray-400 py-8 border-t border-blue-900">
