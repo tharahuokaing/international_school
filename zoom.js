@@ -1,64 +1,62 @@
 /**
  * script.js
- * Automation script to join a Zoom meeting via https://zoom.us/join
- * Prerequisites: Run `npm install puppeteer` before executing.
+ * Automatically populates the Zoom Meeting ID and attempts to join the meeting.
+ * Target URL: https://zoom.us/join
  */
 
-const puppeteer = require('puppeteer');
+/**
+ * Joins a Zoom meeting by injecting the meeting ID into the input field
+ * and clicking the join button.
+ * 
+ * @param {string} meetingId - The Zoom Meeting ID or Personal Link Name.
+ */
+function joinZoomMeeting(meetingId) {
+    if (!meetingId) {
+        console.error("Zoom Join Error: Meeting ID is required.");
+        return;
+    }
 
-// Configuration
-const ZOOM_JOIN_URL = 'https://zoom.us/join';
-const MEETING_ID = '123 456 7890'; // Replace with your actual Meeting ID or Personal Link Name
+    // 1. Locate the input field for the Meeting ID
+    // The input uses 'join-confno' as its id attribute on Zoom's join page
+    const idInput = document.getElementById('join-confno') || document.querySelector('input[type="text"]');
+    
+    // 2. Locate the Join button
+    // The button typically uses 'btnSubmit' or is the primary action button
+    const joinButton = document.getElementById('btnSubmit') || document.querySelector('.btn-join') || document.querySelector('button[type="submit"]');
 
-async function joinZoomMeeting() {
-    // Launch the browser in non-headless mode so you can see the action
-    const browser = await puppeteer.launch({
-        headless: false, 
-        defaultViewport: null,
-        args: ['--start-maximized']
-    });
+    if (!idInput) {
+        console.error("Zoom Join Error: Could not find the Meeting ID input field on this page.");
+        return;
+    }
 
-    try {
-        const page = await browser.newPage();
-        
-        console.log(`Navigating to ${ZOOM_JOIN_URL}...`);
-        await page.goto(ZOOM_JOIN_URL, { waitUntil: 'domcontentloaded' });
+    // 3. Populate the meeting ID
+    idInput.value = meetingId;
 
-        // Wait for the Meeting ID input field to appear
-        const inputSelector = '#join-confno';
-        await page.waitForSelector(inputSelector, { visible: true });
+    // Trigger input events so the page's internal framework (like React/Vue) registers the change
+    idInput.dispatchEvent(new Event('input', { bubbles: true }));
+    idInput.dispatchEvent(new Event('change', { bubbles: true }));
 
-        console.log(`Entering Meeting ID: ${MEETING_ID}`);
-        // Focus and type the meeting ID into the input field
-        await page.click(inputSelector);
-        await page.type(inputSelector, MEETING_ID, { delay: 100 }); // slight delay simulates real typing
+    console.log(`Meeting ID "${meetingId}" inserted successfully.`);
 
-        // Wait for the Join button to become active/clickable
-        const btnSelector = '#btnSubmit';
-        await page.waitForSelector(btnSelector, { visible: true });
-
-        console.log('Clicking the Join button...');
-        // Click the join button and wait for navigation/protocol prompt to trigger
-        await Promise.all([
-            page.click(btnSelector),
-            page.waitForNavigation({ waitUntil: 'networkidle2' }).catch(() => {
-                // Zoom often triggers a protocol handler prompt (zoommtg://), 
-                // which might halt standard HTTP navigation tracking. Catching error gracefully.
-                console.log('Navigation triggered or Zoom app protocol prompt launched.');
-            })
-        ]);
-
-        console.log('Successfully processed join request.');
-
-    } catch (error) {
-        console.error('An error occurred during execution:', error);
-    } finally {
-        // Optional: Keep the browser open for a few seconds to verify, then close
-        setTimeout(async () => {
-            // await browser.close(); 
-        }, 5000);
+    // 4. Trigger the click event to join
+    if (joinButton) {
+        // Optional: Small delay to ensure framework updates before clicking
+        setTimeout(() => {
+            joinButton.click();
+            console.log("Join button clicked automatically.");
+        }, 100);
+    } else {
+        // Fallback: Try submitting the parent form if the button isn't found directly
+        const form = idInput.closest('form');
+        if (form) {
+            form.submit();
+            console.log("Form submitted automatically.");
+        } else {
+            console.warn("Zoom Join Warning: Could not find the Join button or form to click automatically. Please click 'Join' manually.");
+        }
     }
 }
 
-// Execute the function
-joinZoomMeeting();
+// --- Example Usage ---
+// Uncomment the line below to test it in your console on https://zoom.us/join
+// joinZoomMeeting("123 456 7890");
