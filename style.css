@@ -446,3 +446,38 @@ html {
 .card-math-indigo {
     border-top: 4px solid #06b6d4;
 }
+
+/* ==========================================================================
+   Zoom Launcher Layout & Form Specific Enhancements
+   ========================================================================== */
+.launcher-layout {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Base styling for form controls to align with premium look */
+.launcher-layout input[type="text"] {
+    -webkit-appearance: none; /* Removes native Android shadow styling */
+    appearance: none;
+    font-family: var(--font-global);
+}
+
+/* Smooth color transitions for interactive focus states */
+.launcher-layout input[type="text"]:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Tap state compression feedback tailored specifically for Android users */
+.launcher-layout .btn-submit:active {
+    transform: scale(0.97);
+    background-color: #1d4ed8;
+    transition: transform 0.1s ease;
+}
+
+/* Hover behaviors isolated solely to desktop monitors */
+@media (hover: hover) {
+    .launcher-layout .btn-submit:hover {
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    }
+}
