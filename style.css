@@ -1,6 +1,6 @@
-/* =======================================================
+/* ==========================================================================
    ១. កំណត់ Font ខ្មែរ និងអង់គ្លេសជាលក្ខណៈសាកល (Global Fonts)
-   ======================================================= */
+   ========================================================================== */
 body {
     font-family: 'Kantumruy Pro', 'Poppins', sans-serif;
     scroll-behavior: smooth;
@@ -10,16 +10,16 @@ body {
     font-family: 'Kantumruy Pro', sans-serif;
 }
 
-/* =======================================================
+/* ==========================================================================
    ២. បន្ថែមមុខងាររមៀលអេក្រង់រលូន (Smooth Scrolling)
-   ======================================================= */
+   ========================================================================== */
 html {
     scroll-behavior: smooth;
 }
 
-/* =======================================================
+/* ==========================================================================
    ៣. ស្ទីល និងចលនាសម្រាប់កាតកម្មវិធីសិក្សា (Card Interactions)
-   ======================================================= */
+   ========================================================================== */
 .card {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -35,9 +35,9 @@ html {
     transition: transform 0.4s ease, ring 0.4s ease;
 }
 
-/* =======================================================
+/* ==========================================================================
    ៤. ចលនាបង្ហាញទំព័រដំបូង (Hero Section Fade-in Animation)
-   ======================================================= */
+   ========================================================================== */
 .section-fade {
     animation: fadeIn 1.2s ease-out forwards;
 }
@@ -53,9 +53,9 @@ html {
     }
 }
 
-/* =======================================================
+/* ==========================================================================
    ៥. ស្ទីលបន្ថែមសម្រាប់ឧបករណ៍ក្នុងបន្ទប់រៀនអនឡាញ (Zoom SDK UI Support)
-   ======================================================= */
+   ========================================================================== */
 /* សម្រាប់បង្កើតស្រមោល ឬផ្ទៃខ្មៅស្អាតជុំវិញ Canvas បញ្ចាំងវីដេអូ */
 #classroom-canvas {
     background: #000000;
@@ -84,110 +84,137 @@ html {
 /* ==========================================================================
    HUOKAING THARA INTERNATIONAL SCHOOL - GRADE 1 INTERACTIVE STYLES
    ========================================================================== */
-
 /* 1. Alphabet Board Card Styling (script13.js) */
 .letter-card {
-  @apply cursor-pointer select-none border-2 border-gray-200 rounded-2xl p-4 
-         text-center text-3xl font-bold bg-white shadow-sm 
-         transition-all duration-200 transform active:scale-95 hover:shadow-md;
+    cursor: pointer;
+    background-color: #ffffff;
+    border: 2px solid #e5e7eb;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.875rem;
+    font-weight: 700;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.letter-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.letter-card:active {
+    transform: scale(0.95);
 }
 
 /* 2. Math Drag and Drop Zone Custom Transitions (script14.js) */
 .math-drop-zone {
-  min-width: 60px;
-  min-height: 60px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    min-width: 60px;
+    min-height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .math-drag-item {
-  @apply cursor-grab active:cursor-grabbing select-none bg-blue-500 text-white 
-         px-4 py-2 rounded-lg font-bold shadow hover:bg-blue-600 
-         transition-transform transform active:scale-95;
+    cursor: grab;
+    background-color: #3b82f6;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, background-color 0.2s;
+    user-select: none;
+}
+
+.math-drag-item:active {
+    cursor: grabbing;
+    transform: scale(0.95);
+}
+
+.math-drag-item:hover {
+    background-color: #2563eb;
 }
 
 /* 3. Error Shake Animation for incorrect math drops */
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  20%, 60% { transform: translateX(-6px); }
-  40%, 80% { transform: translateX(6px); }
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
 }
 
 .animate-shake {
-  animation: shake 0.4s ease-in-out;
-  @apply border-red-500 text-red-600;
+    animation: shake 0.4s ease-in-out;
+    border-color: #ef4444;
+    color: #dc2626;
 }
 
 /* 4. Reward System Floating Widget Backdrop Blur (script12.js) */
 #grade1-rewards {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 /* 5. Interactive Function Box Styles */
 .function-box {
-  position: relative;
-  display: inline-block;
-  padding: 25px;
-  background: #1e1e2f;
-  color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-  overflow: hidden;
-  z-index: 1;
-  transition: 
-    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
-    box-shadow 0.4s ease, 
-    background-color 0.3s ease,
-    color 0.3s ease;
+    position: relative;
+    display: inline-block;
+    padding: 25px;
+    background: #1e1e2f;
+    color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .function-box::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
-  z-index: -1;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+    z-index: -1;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .function-box:hover {
-  transform: translateY(-8px) scale(1.04);
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  box-shadow: 
-    0 20px 30px rgba(0, 0, 0, 0.3),
-    0 0 10px rgba(255, 255, 255, 0.1);
+    transform: translateY(-8px) scale(1.04);
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3), 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .function-box:hover::before {
-  opacity: 1;
-  transform: scale(1);
+    opacity: 1;
+    transform: scale(1);
 }
 
 .function-box .title {
-  display: block;
-  font-weight: bold;
-  transform: translateZ(0);
-  transition: transform 0.3s ease;
+    display: block;
+    font-weight: bold;
+    transform: translateZ(0);
+    transition: transform 0.3s ease;
 }
 
 .function-box:hover .title {
-  transform: translateY(-2px) scale(1.05);
-  color: #4facfe;
+    transform: translateY(-2px) scale(1.05);
+    color: #4facfe;
 }
 
 /* ==========================================================================
    ៦. កម្មវិធីសិក្សាថ្នាក់ត្រៀមគណិតវិទ្យា (Math Pre-Curriculum Card & Sections)
    ========================================================================== */
-
 /* Container Spacing */
 .math-section-container {
     margin-bottom: 4rem; /* mb-16 */
@@ -273,7 +300,6 @@ html {
 /* ==========================================================================
    ៧. ផ្នែកក្រឡាចត្រង្គកម្មវិធីសិក្សាបឋមសិក្សា (Primary Curriculum Grid & Grade Cards)
    ========================================================================== */
-
 /* Layout and Grid Framework */
 .primary-curriculum-grid {
     display: grid;
@@ -364,26 +390,59 @@ html {
     color: #1d4ed8;
 }
 
-/* -------------------------------------------------------
+/* --------------------------------------------------------------------------
    Color Variances & Themes
-   ------------------------------------------------------- */
-
+   -------------------------------------------------------------------------- */
 /* Reusable Grade Button Color Tones */
-.btn-amber { background-color: rgba(217, 119, 6, 0.15); color: #b45309; }
-.btn-amber:hover { background-color: rgba(217, 119, 6, 0.25); }
+.btn-amber {
+    background-color: rgba(217, 119, 6, 0.15);
+    color: #b45309;
+}
 
-.btn-blue { background-color: rgba(37, 99, 235, 0.15); color: #1d4ed8; }
-.btn-blue:hover { background-color: rgba(37, 99, 235, 0.25); }
+.btn-amber:hover {
+    background-color: rgba(217, 119, 6, 0.25);
+}
 
-.btn-indigo { background-color: rgba(79, 70, 229, 0.15); color: #4338ca; }
-.btn-indigo:hover { background-color: rgba(79, 70, 229, 0.25); }
+.btn-blue {
+    background-color: rgba(37, 99, 235, 0.15);
+    color: #1d4ed8;
+}
+
+.btn-blue:hover {
+    background-color: rgba(37, 99, 235, 0.25);
+}
+
+.btn-indigo {
+    background-color: rgba(79, 70, 229, 0.15);
+    color: #4338ca;
+}
+
+.btn-indigo:hover {
+    background-color: rgba(79, 70, 229, 0.25);
+}
 
 /* Khmer Section Card Borders (Deep Blue / Blue Layout Accent) */
-.card-khmer-amber { border-top: 4px solid #1e3a8a; }
-.card-khmer-blue { border-top: 4px solid #2563eb; }
-.card-khmer-indigo { border-top: 4px solid #1d4ed8; }
+.card-khmer-amber {
+    border-top: 4px solid #1e3a8a;
+}
+
+.card-khmer-blue {
+    border-top: 4px solid #2563eb;
+}
+
+.card-khmer-indigo {
+    border-top: 4px solid #1d4ed8;
+}
 
 /* Math Section Card Borders (Emerald / Fresh Mint Layout Accent) */
-.card-math-amber { border-top: 4px solid #059669; }
-.card-math-blue { border-top: 4px solid #10b981; }
-.card-math-indigo { border-top: 4px solid #06b6d4; }
+.card-math-amber {
+    border-top: 4px solid #059669;
+}
+
+.card-math-blue {
+    border-top: 4px solid #10b981;
+}
+
+.card-math-indigo {
+    border-top: 4px solid #06b6d4;
+}
