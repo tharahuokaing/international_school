@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </p>
                     </div>
                     <div class="w-full md:w-auto shrink-0">
-                        <a href="https://elearning.moeys.gov.kh/" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition shadow-sm">
+                        <a href="https://elearning.moeys.gov.kh/course/search.php?context=2&q=%E1%9E%82%E1%9E%8E%E1%9E%B7%E1%9E%8F%E1%9E%9C%E1%9E%B7%E1%9E%91%E1%9F%92%E1%9E%99%E1%9E%B6" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition shadow-sm">
                             ចូលរៀនថ្នាក់ត្រៀមគណិតវិទ្យា
                         </a>
                     </div>
