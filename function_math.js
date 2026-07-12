@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
 
-        // ៤. បញ្ចូល Section ថ្មីនេះ ទៅខាងមុខ (មុន) Section #curriculum
-        curriculumSection.parentNode.insertBefore(mathCourseSection, curriculumSection);
+        // ៤. បញ្ចូល Section ថ្មីនេះ ទៅខាងក្រោយ (បន្ទាប់ពី) Section #curriculum
+        curriculumSection.insertAdjacentElement('afterend', mathCourseSection);
     }
 });
