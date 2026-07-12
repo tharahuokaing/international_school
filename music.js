@@ -62,12 +62,12 @@ function toggleWeddingMusic() {
             .catch(error => {
                 console.log("Autoplay context restricted by browser security policies.", error);
                 // Graceful fallback: silently keep the button state ready instead of alerting
-                audioBtn.innerHTML = '🎵 តន្ត្រី';
+                audioBtn.innerHTML = '🎵';
                 audioBtn.style.borderColor = '#c5a059';
             });
     } else {
         weddingAudio.pause();
-        audioBtn.innerHTML = '🎵 តន្ត្រី'; // Revert back to "Play Music"
+        audioBtn.innerHTML = '🎵'; // Revert back to "Play Music"
         audioBtn.style.borderColor = '#c5a059';
     }
 }
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // User Interaction Trigger: Attempts to start music smoothly upon the first real window interaction
     const initiateAutoplay = () => {
-        if (weddingAudio.paused && audioBtn.innerHTML === '🎵 តន្ត្រី') {
+        if (weddingAudio.paused && audioBtn.innerHTML === '🎵') {
             weddingAudio.play()
                 .then(() => {
                     audioBtn.innerHTML = '🔇 បិទតន្ត្រី';
