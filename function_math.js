@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     រៀនស្គាល់លេខ ការរាប់ចំនួនជាមូលដ្ឋាន រូបធរណីមាត្រសាមញ្ញ និងការគណនាកម្រិតដំបូង ដើម្បីបង្កើនភាពជឿជាក់ និងត្រៀមខ្លួនរួចជាស្រេចមុនចូលរៀនថ្នាក់ទី១។
                 </p>
                 <div class="flex flex-wrap gap-2">
-                    <a href="https://elearning.moeys.gov.kh/" class="inline-block bg-emerald-600/40 text-emerald-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider transition-all duration-200 shadow-inner">
+                    <a href="https://elearning.moeys.gov.kh/course/search.php?q=%E1%9E%82%E1%9E%8E%E1%9E%B7%E1%9E%8F%E1%9E%9C%E1%9E%B7%E1%9E%91%E1%9F%92%E1%9E%99%E1%9E%B6&areaids=core_course-course" class="inline-block bg-emerald-600/40 text-emerald-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider transition-all duration-200 shadow-inner">
                         ចូលរៀនថ្នាក់ត្រៀមគណិតវិទ្យា
                     </a>
                 </div>
