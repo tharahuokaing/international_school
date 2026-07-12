@@ -48,6 +48,39 @@ document.addEventListener("DOMContentLoaded", function () {
     // === ២. រៀបចំផ្នែកកម្មវិធីសិក្សាគណិតវិទ្យា (Math Section) ===
     const mathSection = document.getElementById("curriculum");
     if (mathSection) {
+        // ក. ស្វែងរក Tag <h3> (កម្មវិធីសិក្សាកម្រិតបឋមសិក្សាគណិតវិទ្យា) នៅក្នុង Section នោះ
+        const heading = mathSection.querySelector("h3");
+
+        if (heading) {
+            // ខ. បង្កើត Section ថ្មីសម្រាប់វគ្គកម្មវិធីសិក្សាគណិតវិទ្យា (មុនកម្រិតបឋមសិក្សា)
+            const mathCourseSection = document.createElement("section");
+            mathCourseSection.id = "math-pre-curriculum";
+            mathCourseSection.className = "math-section-container";
+
+            mathCourseSection.innerHTML = `
+                <h3 class="math-main-heading">
+                    <span class="math-heading-indicator"></span> 
+                    វគ្គកម្មវិធីសិក្សាគណិតវិទ្យា (មុនកម្រិតបឋមសិក្សា)
+                </h3>
+                <div class="math-card">
+                    <div class="math-card-icon">🔢</div>
+                    <h4 class="math-card-title">ថ្នាក់ត្រៀមគណិតវិទ្យា</h4>
+                    <p class="math-card-description">
+                        រៀនស្គាល់លេខ ការរាប់ចំនួនជាមូលដ្ឋាន រូបធរណីមាត្រសាមញ្ញ និងការគណនាកម្រិតដំបូង ដើម្បីបង្កើនភាពជឿជាក់ និងត្រៀមខ្លួនរួចជាស្រេចមុនចូលរៀនថ្នាក់ទី១។
+                    </p>
+                    <div class="math-btn-wrapper">
+                        <a href="https://elearning.moeys.gov.kh/" class="math-primary-btn">
+                            ចូលរៀនថ្នាក់ត្រៀមគណិតវិទ្យា
+                        </a>
+                    </div>
+                </div>
+            `;
+
+            // គ. បញ្ចូល Section ថ្មីនេះ ទៅខាងក្រោយ (បន្ទាប់ពី) Tag <h3> នៃកម្មវិធីសិក្សាគណិតវិទ្យា
+            heading.insertAdjacentElement('afterend', mathCourseSection);
+        }
+
+        // ឃ. រៀបចំក្រឡាចត្រង្គថ្នាក់ទី១-៦ គណិតវិទ្យា
         const gridContainer = mathSection.querySelector(".grid") || mathSection.querySelector("div");
         if (gridContainer) {
             gridContainer.className = "primary-curriculum-grid";
