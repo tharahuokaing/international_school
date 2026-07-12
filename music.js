@@ -16,7 +16,7 @@ weddingAudio.volume = 0.4; // Set elegant ambient volume threshold (40%)
 // Create Floating Audio Control Interface Button
 const audioBtn = document.createElement('button');
 audioBtn.id = 'weddingAudioToggleBtn';
-audioBtn.innerHTML = '🎵 តន្ត្រី'; // Initial Native Khmer Button Prompt Label
+audioBtn.innerHTML = '🎵'; // Initial Native Khmer Button Prompt Label
 
 // Apply inline layout styling to cleanly position the controller on screen
 Object.assign(audioBtn.style, {
