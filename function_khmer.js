@@ -1,34 +1,93 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // ១. ស្វែងរក Section កម្មវិធីសិក្សាកម្រិតបឋមសិក្សាដែលមានស្រាប់ (តាមរយៈ ID #curriculum)
-    const curriculumSection = document.getElementById("curriculum");
-
-    if (curriculumSection) {
-        // ២. បង្កើត Section ថ្មីសម្រាប់វគ្គកម្មវិធីសិក្សាភាសាខ្មែរ
-        const khmerCourseSection = document.createElement("section");
-        khmerCourseSection.id = "khmer-pre-curriculum";
-        khmerCourseSection.className = "mb-16";
-
-        // ៣. បន្ថែមមាតិកា (HTML Content) ទៅក្នុង Section ថ្មីនោះ
-        khmerCourseSection.innerHTML = `
-            <h3 class="text-2xl font-bold text-gray-900 mb-8 flex items-center">
-                <span class="w-2 h-7 bg-amber-500 rounded-full mr-3"></span> 
-                វគ្គកម្មវិធីសិក្សាភាសាខ្មែរ (មុនកម្រិតបឋមសិក្សា)
-            </h3>
-            <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 transition duration-300 hover:shadow-md">
-                <div class="text-3xl mb-4">📖</div>
-                <h4 class="text-lg font-bold text-gray-900 mb-3">ថ្នាក់ត្រៀមភាសាខ្មែរ</h4>
-                <p class="text-sm text-gray-600 leading-relaxed mb-4">
-                    ពង្រឹងមូលដ្ឋានគ្រឹះនៃការអាន ការសរសេរតួអក្សរ និងការបញ្ចេញសំឡេងព្យញ្ជនៈ ស្រៈ ឱ្យបានត្រឹមត្រូវ មុននឹងឈានចូលសិក្សាកម្រិតបឋមសិក្សា។
-                </p>
-                <div class="flex flex-wrap gap-2">
-                    <a href="https://elearning.moeys.gov.kh/" class="inline-block bg-amber-600/40 text-amber-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider transition-all duration-200 shadow-inner">
-                        ចូលរៀនថ្នាក់ត្រៀម
-                    </a>
+    // === ១. រៀបចំផ្នែកកម្មវិធីសិក្សាភាសាខ្មែរ (Khmer Section) ===
+    const khmerSection = document.getElementById("curriculum-khmer");
+    if (khmerSection) {
+        const gridContainer = khmerSection.querySelector(".grid") || khmerSection.querySelector("div");
+        if (gridContainer) {
+            gridContainer.className = "primary-curriculum-grid";
+            gridContainer.innerHTML = `
+                <!-- កាតថ្នាក់ទី១-២ -->
+                <div class="grade-card card-khmer-amber">
+                    <div class="grade-icon">🎒</div>
+                    <h4 class="grade-title">ថ្នាក់ទី១ និង ទី២</h4>
+                    <p class="grade-desc">ពង្រឹងមូលដ្ឋានគ្រឹះអក្សរសាស្ត្រខ្មែរ ដំបូង និងជំនាញទំនាក់ទំនងជាមូលដ្ឋាន។</p>
+                    <div class="grade-btn-wrapper">
+                        <a href="https://elearning.moeys.gov.kh/k1/khmer/" class="grade-btn btn-amber">ថ្នាក់ទី១</a>
+                        <a href="https://elearning.moeys.gov.kh/k2/khmer/" class="grade-btn btn-amber">ថ្នាក់ទី២</a>
+                    </div>
+                    <a href="#" class="view-details-link">🔽 មើលលម្អិត</a>
                 </div>
-            </div>
-        `;
 
-        // ៤. បញ្ចូល Section ថ្មីនេះ ទៅខាងមុខ (មុន) Section #curriculum
-        curriculumSection.parentNode.insertBefore(khmerCourseSection, curriculumSection);
+                <!-- កាតថ្នាក់ទី៣-៤ -->
+                <div class="grade-card card-khmer-blue">
+                    <div class="grade-icon">📘</div>
+                    <h4 class="grade-title">ថ្នាក់ទី៣ និង ទី៤</h4>
+                    <p class="grade-desc">អភិវឌ្ឍការគិតពិចារណា ការសិក្សាភាសាបរទេសកម្រិតដំបូង និងវិទ្យាសាស្ត្រសង្គមផ្សេងៗ។</p>
+                    <div class="grade-btn-wrapper">
+                        <a href="https://elearning.moeys.gov.kh/k3/khmer/" class="grade-btn btn-blue">ថ្នាក់ទី៣</a>
+                        <a href="https://elearning.moeys.gov.kh/k4/khmer/" class="grade-btn btn-blue">ថ្នាក់ទី៤</a>
+                    </div>
+                    <a href="#" class="view-details-link">🔽 មើលលម្អិត</a>
+                </div>
+
+                <!-- កាតថ្នាក់ទី៥-៦ -->
+                <div class="grade-card card-khmer-indigo">
+                    <div class="grade-icon">🎓</div>
+                    <h4 class="grade-title">ថ្នាក់ទី៥ និង ទី៦</h4>
+                    <p class="grade-desc">ត្រៀមលក្ខណៈសម្រាប់ការផ្លាស់ប្តូរទៅកាន់មធ្យមសិក្សា ជាមួយមេរៀនស៊ីជម្រៅ និងបច្ចេកវិទ្យា។</p>
+                    <div class="grade-btn-wrapper">
+                        <a href="https://elearning.moeys.gov.kh/k5/khmer/" class="grade-btn btn-indigo">ថ្នាក់ទី៥</a>
+                        <a href="https://elearning.moeys.gov.kh/k6/khmer/" class="grade-btn btn-indigo">ថ្នាក់ទី៦</a>
+                    </div>
+                    <a href="#" class="view-details-link">🔽 មើលលម្អិត</a>
+                </div>
+            `;
+        }
+    }
+
+    // === ២. រៀបចំផ្នែកកម្មវិធីសិក្សាគណិតវិទ្យា (Math Section) ===
+    const mathSection = document.getElementById("curriculum");
+    if (mathSection) {
+        const gridContainer = mathSection.querySelector(".grid") || mathSection.querySelector("div");
+        if (gridContainer) {
+            gridContainer.className = "primary-curriculum-grid";
+            gridContainer.innerHTML = `
+                <!-- កាតថ្នាក់ទី១-២ -->
+                <div class="grade-card card-math-amber">
+                    <div class="grade-icon">🎒</div>
+                    <h4 class="grade-title">ថ្នាក់ទី១ និង ទី២</h4>
+                    <p class="grade-desc">ពង្រឹងមូលដ្ឋានគ្រឹះគណិតវិទ្យាដំបូង និងជំនាញទំនាក់ទំនងជាមូលដ្ឋាន។</p>
+                    <div class="grade-btn-wrapper">
+                        <a href="https://elearning.moeys.gov.kh/k1/maths/" class="grade-btn btn-amber">ថ្នាក់ទី១</a>
+                        <a href="https://elearning.moeys.gov.kh/k2/maths/" class="grade-btn btn-amber">ថ្នាក់ទី២</a>
+                    </div>
+                    <a href="#" class="view-details-link">🔽 មើលលម្អិត</a>
+                </div>
+
+                <!-- កាតថ្នាក់ទី៣-៤ -->
+                <div class="grade-card card-math-blue">
+                    <div class="grade-icon">📘</div>
+                    <h4 class="grade-title">ថ្នាក់ទី៣ និង ទី៤</h4>
+                    <p class="grade-desc">អភិវឌ្ឍការគិតពិចារណា ការសិក្សាភាសាបរទេសកម្រិតដំបូង និងវិទ្យាសាស្ត្រសង្គមផ្សេងៗ។</p>
+                    <div class="grade-btn-wrapper">
+                        <a href="https://elearning.moeys.gov.kh/k3/maths/" class="grade-btn btn-blue">ថ្នាក់ទី៣</a>
+                        <a href="https://elearning.moeys.gov.kh/k4/maths/" class="grade-btn btn-blue">ថ្នាក់ទី៤</a>
+                    </div>
+                    <a href="#" class="view-details-link">🔽 មើលលម្អិត</a>
+                </div>
+
+                <!-- កាតថ្នាក់ទី៥-៦ -->
+                <div class="grade-card card-math-indigo">
+                    <div class="grade-icon">🎓</div>
+                    <h4 class="grade-title">ថ្នាក់ទី៥ និង ទី៦</h4>
+                    <p class="grade-desc">ត្រៀមលក្ខណៈសម្រាប់ការផ្លាស់ប្តូរទៅកាន់មធ្យមសិក្សា ជាមួយមេរៀនស៊ីជម្រៅ និងបច្ចេកវិទ្យា។</p>
+                    <div class="grade-btn-wrapper">
+                        <a href="https://elearning.moeys.gov.kh/k5/maths/" class="grade-btn btn-indigo">ថ្នាក់ទី៥</a>
+                        <a href="https://elearning.moeys.gov.kh/k6/maths/" class="grade-btn btn-indigo">ថ្នាក់ទី៦</a>
+                    </div>
+                    <a href="#" class="view-details-link">🔽 មើលលម្អិត</a>
+                </div>
+            `;
+        }
     }
 });
