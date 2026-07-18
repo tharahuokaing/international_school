@@ -1,4 +1,18 @@
-<!DOCTYPE html>
+1.2.3 Environmental Considerations
+Unknown-Environment Test
+Known-Environment Test
+Partially Known Environment Test
+Surveying Different Standards and Methodologies 
+MITRE ATT&CK : https://attack.mitre.org
+OWASP Web Security Testing Guide (WSTG)
+https://owasp.org/www-project-web-security-testing-guide/.
+NIST SP 800-115
+https://csrc.nist.gov/publications/detail/sp/800-115/final
+OSSTMM
+https://www.isecom.org
+1.2.5 Surveying Different Standards and Methodologies
+OWASP WSTG
+NIST SP 800-115<!DOCTYPE html>
 <html lang="km">
 <head>
     <meta charset="UTF-8">
@@ -101,7 +115,7 @@
     <!-- ==========================================================================
          ៥. ផ្នែកបញ្ជាចូលរួមការប្រជុំ (Zoom SDK Meeting Launcher Layout)
          ========================================================================== -->
-        <div class="launcher-layout flex flex-col items-center justify-center px-4 py-12 md:py-16 bg-gray-50/50 border-t border-gray-100">
+    <div class="launcher-layout flex flex-col items-center justify-center px-4 py-12 md:py-16 bg-gray-50/50 border-t border-gray-100">
         <div class="container max-w-md w-full bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100 transition duration-300 hover:shadow-md">
             <h1 class="text-xl md:text-2xl font-bold text-gray-900 mb-6 text-center">Launch Zoom Meeting</h1>
         
@@ -110,12 +124,13 @@
                 <input type="text" id="meetingIdInput" placeholder="e.g., 123 456 7890" required class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm transition-all">
             </div>
         
-            <!-- href will be handled dynamically by JavaScript -->
-            <a id="joinBtn" href="#" class="btn-submit block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl text-sm transition duration-200 active:scale-98 shadow-sm">
+            <!-- href handled dynamically by JavaScript inside zoom.js -->
+            <a id="joinBtn" href="javascript:void(0);" class="btn-submit block text-center w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-xl text-sm transition duration-200 active:scale-98 shadow-sm">
                 Join Meeting
             </a>
         </div>
     </div>
+
     <!-- ==========================================================================
          ៦. ផ្នែកជើងទំព័រ (Footer)
          ========================================================================== -->
